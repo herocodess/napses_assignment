@@ -6,8 +6,9 @@ class GlobalContainerWidget extends StatelessWidget {
   final double? height;
   final String? header;
   final Widget? content;
+  final bool? isCalendar;
   const GlobalContainerWidget(
-      {Key? key, this.height, this.header, this.content})
+      {Key? key, this.height, this.header, this.content, this.isCalendar})
       : super(key: key);
 
   @override
@@ -22,24 +23,26 @@ class GlobalContainerWidget extends StatelessWidget {
           Radius.circular(20),
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                header!,
-                style: GoogleFonts.nunito(
-                    color: AppColors.kGrey,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-          content!,
-        ],
-      ),
+      child: isCalendar == true
+          ? content!
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      header!,
+                      style: GoogleFonts.nunito(
+                          color: AppColors.kGrey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                content!,
+              ],
+            ),
     );
   }
 }

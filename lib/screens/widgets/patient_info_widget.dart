@@ -13,7 +13,7 @@ class PatientInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: 170,
+      // height: 170,
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
         color: AppColors.kGrey.withOpacity(0.1),
@@ -59,43 +59,48 @@ class PatientInfoWidget extends StatelessWidget {
             ),
           ),
           AppSpacers.width(10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Allison Korsgaard",
-                style: GoogleFonts.nunito(
-                  fontSize: 18,
-                  color: AppColors.kGrey,
-                ),
-              ),
-              Text(
-                "Ph.D in Clinical Psychology,\nDiploma in Clinical Therapy",
-                style: GoogleFonts.nunito(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.kBlack,
-                ),
-              ),
-              AppSpacers.height(25),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  FeaturesWidget(
-                    text: "Anxiety",
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Allison Korsgaard",
+                  style: GoogleFonts.nunito(
+                    fontSize: 18,
+                    color: AppColors.kGrey,
                   ),
-                  AppSpacers.width(5),
-                  FeaturesWidget(
-                    text: "Depression",
+                ),
+                Text(
+                  "Ph.D in Clinical Psychology,\nDiploma in Clinical Therapy",
+                  style: GoogleFonts.nunito(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.kBlack,
                   ),
-                ],
-              ),
-              AppSpacers.height(10),
-              FeaturesWidget(
-                text: "₹ 700/Session",
-              ),
-            ],
+                ),
+                AppSpacers.height(25),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FeaturesWidget(
+                      text: "Anxiety",
+                    ),
+                    AppSpacers.width(5),
+                    FeaturesWidget(
+                      text: "Depression",
+                    ),
+                  ],
+                ),
+                AppSpacers.height(10),
+                Container(
+                  width: 120,
+                  child: FeaturesWidget(
+                    text: "₹ 700/Session",
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

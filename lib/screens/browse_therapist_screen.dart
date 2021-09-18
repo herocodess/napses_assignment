@@ -9,6 +9,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:readmore/readmore.dart';
 
+import 'widgets/global_app_bar.dart';
+
 class BrowseTherapistScreen extends StatefulWidget {
   const BrowseTherapistScreen({Key? key}) : super(key: key);
 
@@ -22,33 +24,9 @@ class _BrowseTherapistScreenState extends State<BrowseTherapistScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kWhite,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: AppColors.kWhite,
-        automaticallyImplyLeading: false,
-        title: Text(
-          "Browse Therapists",
-          style: GoogleFonts.nunito(fontSize: 18, color: AppColors.kBlack),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: Card(
-              elevation: 5,
-              shape: CircleBorder(),
-              child: Container(
-                width: 40,
-                height: 40,
-                child: Center(
-                  child: Image.asset(
-                    AppAssets.hands,
-                    scale: 2.5,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+      appBar: GlobalAppBar(
+        isLeading: false,
+        title: "Browse Therapists",
       ),
       body: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(),
