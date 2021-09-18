@@ -22,7 +22,7 @@ class AdditionalMessageWidget extends StatelessWidget {
           AppSpacers.height(20),
           InputDetailsWidget(
             height: 150,
-            hint: "Briefly explain what would you like \nto get help in",
+            hint: "Briefly explain what would you like to get help in",
           ),
         ],
       ),

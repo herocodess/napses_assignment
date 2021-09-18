@@ -32,7 +32,7 @@ class _BrowseTherapistScreenState extends State<BrowseTherapistScreen> {
         physics: AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.all(20),
         child: SizedBox(
-          height: 500,
+          height: 600,
           child: Stack(
             fit: StackFit.loose,
             children: [
@@ -103,8 +103,8 @@ class _BrowseTherapistScreenState extends State<BrowseTherapistScreen> {
                 offset: Offset(0, 50),
                 child: Container(
                   height: isExpanded == true
-                      ? MediaQuery.of(context).size.height / 1.5
-                      : MediaQuery.of(context).size.height / 1.8,
+                      ? MediaQuery.of(context).size.height / 1.7
+                      : MediaQuery.of(context).size.height / 2.1,
                   width: double.maxFinite,
                   decoration: BoxDecoration(
                     color: AppColors.kGrey.withOpacity(0.1),
@@ -231,7 +231,7 @@ class _BrowseTherapistScreenState extends State<BrowseTherapistScreen> {
                 top: 0,
                 left: 0,
                 right: 0,
-                bottom: isExpanded == true ? -500 : -350,
+                bottom: isExpanded == true ? -550 : -350,
                 child: GestureDetector(
                   onTap: () => pushNewScreen(
                     context,
